@@ -43,6 +43,7 @@ def main():
 ''')
     b = st.number_input("Enter is your Age (yr)",step=1.0,max_value=150.0)
     
+    
     height= st.slider(label='Enter is your Height(in centimeter)?',min_value=30,max_value=200,step=1)
     weight= st.slider(label='Enter is your Weight(in Kg)?',min_value=5,max_value=150,step=1)
     BMI= 0 #Input to model
@@ -75,40 +76,78 @@ def main():
     # h = st.number_input("h")
    
     if st.button("Predict"):
-        result=diabetic_predict(c,g,a,d,f,BMI,e,b)
-        
-        if(result<=0.5):
+        if b<=0:
             st.write('''
-            ## Congratulations....!!!! 
+            #### Please Enter Your Age(yr)
             ''')
-            
-            html_temp1 = """
-            <div style="background-color:Yellow;padding:10px">
-            <h2 style="color:Black;text-align:center;"><em>You are not Diabetic
-            </em> </h2>
-            </div>
-            <hr>
-                        """
-    
-            st.markdown(html_temp1,unsafe_allow_html=True)
-            st.image('https://previews.123rf.com/images/wetzkaz/wetzkaz1403/wetzkaz140300125/26668929-smily.jpg',width=500)
-            
-            
-        elif(result >0.5):
+        elif a<=0:
             st.write('''
-            ### Calm Down.. 
-            ## you are a Diabetic
-            ## Please visit your nearest lab for Glucose Tolerance Test
+            
+            #### Please Enter Your Blood Pressure (mm Hg)
             ''')
+        
+        elif d<=0:
+            st.write('''
+            #### Please Enter Your Tricep Skinfold Thickness (in mm)
+            ''')
+
+        elif e<=0:
+            st.write('''
+            #### Please Enter Diabetic Pedigree Function
+            ''')
+        
+        elif height<=30:
+            st.write('''
+            #### Please Enter Your Height
+            ''')
+
+        elif weight<5:
+            st.write('''
+            #### Please Enter Your weight
+            ''')
+
+        else:
+            result=diabetic_predict(c,g,a,d,f,BMI,e,b)
+        
+            if(result<=0.5):
+                st.write('''
+                ## Congratulations....!!!! 
+                ''')
+                
+                html_temp1 = """
+                <div style="background-color:Yellow;padding:10px">
+                <h2 style="color:Black;text-align:center;"><em>You are not Diabetic
+                </em> </h2>
+                </div>
+                <hr>
+                            """
+        
+                st.markdown(html_temp1,unsafe_allow_html=True)
+                st.image('https://previews.123rf.com/images/wetzkaz/wetzkaz1403/wetzkaz140300125/26668929-smily.jpg',width=500)
+                
+                
+            elif(result >0.5):
+                st.write('''
+                ### Calm Down.. 
+                ## you are a Diabetic
+                ## Please visit your nearest lab for Glucose Tolerance Test
+                ''')
             
             
         
         
         
+    html_temp3='''
+    <hr>
+    '''
+
+    st.markdown(html_temp3,unsafe_allow_html=True)
     if st.button("About"):
-     
-    
-        st.text("Developed By Rahul")
+        
+        
+        st.warning('''
+        ### Developed By Rahul Gowlapalli
+        ''')
       
         
 if __name__=='__main__':
