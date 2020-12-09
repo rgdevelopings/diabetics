@@ -123,7 +123,7 @@ def main():
                             """
         
                 st.markdown(html_temp1,unsafe_allow_html=True)
-                st.image('https://previews.123rf.com/images/wetzkaz/wetzkaz1403/wetzkaz140300125/26668929-smily.jpg',width=500)
+                st.image('https://banner2.cleanpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg',width=500)
                 
                 
             elif(result >0.5):
