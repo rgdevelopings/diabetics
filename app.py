@@ -109,7 +109,7 @@ def main():
         else:
             result=diabetic_predict(c,g,a,d,f,BMI,e,b)
         
-            if(result<=0.5):
+            if(result<=0.75):
                 st.write('''
                 ## Congratulations....!!!! 
                 ''')
@@ -126,7 +126,7 @@ def main():
                 st.image('https://banner2.cleanpng.com/20180928/zgk/kisspng-megadeth-dave-tumblr-5bae41dad049e2.5155379115381467788532.jpg',width=500)
                 
                 
-            elif(result >0.5):
+            elif(result >0.75):
                 st.write('''
                 ### Calm Down.. 
                 ## you are a Diabetic
